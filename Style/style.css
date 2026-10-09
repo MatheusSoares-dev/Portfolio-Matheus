@@ -13,8 +13,19 @@
     --fontPrimary: "Syne", sans-serif;
     --fontSecundary: "Brittany";
     --fontText: "Quicksand", sans-serif;
-    --Verde: #184F1E;
-    --TerraCota: #E02500;
+    --Verde: #3A6604;
+    --TerraCota: #670409;
     --Branco: #F7F8F4;
     --Preto: #2C3028;
+}
+
+
+body {
+    color: var(--Preto);
+    background: var(--Branco);
+    font-family: var(--fontText);
+}
+
+.sessao-inicial {
+    height: 100svh;
 }
