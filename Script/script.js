@@ -5,7 +5,7 @@ const tlHero = gsap.timeline({
     scrollTrigger: {
         trigger: ".hero",
         strat: "top top",
-        end: "+=200%",
+        end: "+=150%",
         pin: true,
         scrub: 2
     }
@@ -51,26 +51,30 @@ tlHero.from(palavraNome.words, {
 const tlFrase = gsap.timeline({
     scrollTrigger: {
         trigger: ".sessao-frases",
-        start: "-100% top",
+        start: "-70% top",
         end: "bottom bottom",
-        scrub: 2,
+        scrub: 3,
+        markers: true
     }
 })
 
-const letrasFrases = new SplitText(".frases", { type: "chars" })
 
-tlFrase.from(letrasFrases.chars, {
-    y: -100,
-    opacity: 0,
-    duration:1,
-    stagger: {
-        from: "center",
-        each: 1
-    }
-})
+tlFrase.fromTo(".frase-esquerda", {
+    x: -20,
 
-tlFrase.to(".frase-esqueda", {
-    x: 300,
+}, {
+    x: 15,
+    ease: "power.inOut",
     duration: 1
+})
+
+tlFrase.fromTo(".frase-direita", {
+    x: 20,
+
+}, {
+    x: -15,
+    ease: "power.inOut",
+    duration: 1
+
 }, "<")
 
