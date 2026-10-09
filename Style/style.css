@@ -16,7 +16,7 @@
     --Verde: #3A6604;
     --TerraCota: #670409;
     --Branco: #F7F8F4;
-    --Preto: #2C3028;
+    --Preto: #1c1f1a;
 }
 
 
@@ -28,4 +28,70 @@ body {
 
 .sessao-inicial {
     height: 100svh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerda, .direita {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    font-size: clamp(6rem, 7rem, 10rem);
+    z-index: 2;
+}
+
+.esquerda {
+    background-color: var(--TerraCota);
+    color: var(--Branco);
+}
+
+.direita {
+    background-color: var(--Branco);
+    color: var(--TerraCota);
+}
+
+.sessao-nome {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    p {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+.nome {
+    line-height: 3.9rem;
+    h1 {
+        font-size: clamp(6rem, 9rem, 10rem);
+        font-family: var(--fontPrimary);
+        font-weight: 800;
+        text-transform:uppercase ;
+        color: var(--Verde);
+    }
+
+    h2 {
+        /* text-align: center; */
+        font-size: clamp(3rem, 6rem, 7rem);
+        font-family: var(--fontSecundary);
+        color: var(--TerraCota);
+        letter-spacing: 3px;
+        -webkit-text-stroke: 3px var(--Branco);
+        paint-order: stroke fill;
+    }
 }
