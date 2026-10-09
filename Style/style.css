@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "Brittany";
-    src: url("/Mockup/font/BrittanySignature.ttf");
+    src: url("/mockup/font/BrittanySignature.ttf");
 }
 
 :root {
@@ -41,6 +41,7 @@ body {
     height: 100%;
     width: 50%;
     font-size: clamp(6rem, 7rem, 10rem);
+    font-family: var(--fontSecundary);
     z-index: 2;
 }
 
@@ -86,7 +87,7 @@ body {
     }
 
     h2 {
-        /* text-align: center; */
+        
         font-size: clamp(3rem, 6rem, 7rem);
         font-family: var(--fontSecundary);
         color: var(--TerraCota);
