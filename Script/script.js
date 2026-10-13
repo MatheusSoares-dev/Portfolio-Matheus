@@ -54,25 +54,24 @@ const tlFrase = gsap.timeline({
         start: "-70% top",
         end: "bottom bottom",
         scrub: 3,
-        markers: true
     }
 })
 
 
 tlFrase.fromTo(".frase-esquerda", {
-    x: -20,
+    x: -30,
 
 }, {
-    x: 15,
+    x: 40,
     ease: "power.inOut",
     duration: 1
 })
 
 tlFrase.fromTo(".frase-direita", {
-    x: 20,
+    x: 30,
 
 }, {
-    x: -15,
+    x: -40,
     ease: "power.inOut",
     duration: 1
 
