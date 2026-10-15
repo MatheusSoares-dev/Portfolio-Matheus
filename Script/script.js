@@ -78,7 +78,7 @@ tlFrase.fromTo(".frase-direita", {
 }, "<")
 
 
-const digitacaoMatheus = new SplitText(".frase-Matheus p", {type: "chars"})
+const digitacaoMatheus = new SplitText(".frase-Matheus p", { type: "chars" })
 
 gsap.from(digitacaoMatheus.chars, {
     display: "none",
@@ -89,6 +89,40 @@ gsap.from(digitacaoMatheus.chars, {
         trigger: ".sessao-Matheus",
         start: "-50% top",
         end: "95% bottom",
-        scrub: 2,
+        scrub: 1,
     }
 })
+
+
+const tlTransicao = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".sessao-trabalhos",
+        start: "top top",
+        end: "+=170%",
+        scrub: 2,
+        pin: true,
+        anticipatePin: 1
+    }
+})
+
+tlTransicao.to(".colunas", {
+    scaleX: 0,
+    duration: 1,
+    ease: "power2.inOut",
+    stagger: {
+        each: .2,
+        from: "start"
+    }
+})
+
+tlTransicao.from(".cabecalho-trabalhos h3", {
+    x: 100, 
+    opacity: 0,
+    duration: 1
+})
+
+tlTransicao.from(".subTitulo p", {
+    x: -100,
+    opacity: 0,
+    duration: 1
+}, "<")

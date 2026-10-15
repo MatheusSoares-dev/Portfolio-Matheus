@@ -185,6 +185,7 @@ body {
 
 .matheus {
     padding: 2rem 0;
+
     img {
         width: 18rem;
         border-radius: 12px;
@@ -201,34 +202,38 @@ body {
 }
 
 
-
-
-.trabalhos {
-    width: 100%;
-    height: 100svh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--Preto);
-    color: var(--Branco);
-}
-
 .sessao-trabalhos {
-    display: flex;
+    position: relative;
     background: var(--Preto);
     color: var(--Branco);
     width: 100%;
     padding: 2rem;
 }
 
-.titulo-trabalhos {
+.transicao {
+    width: 100%;
+    height: 110svh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.colunas {
+    height: 100%;
+    flex: 1;
+    background: var(--Branco);
+    transform-origin: left center;
+}
+
+.cabecalho-trabalhos {
+    display: flex;
     flex-direction: column;
-    padding: 2rem;
-    text-align: center;
+    align-items: center;
     gap: 2rem;
+    width: 100%;
 
     h3 {
         font-family: var(--fontPrimary);
@@ -237,6 +242,17 @@ body {
         text-transform: uppercase;
         font-size: clamp(4rem, 6rem, 7rem);
     }
+}
+
+.conteiner-trabalhos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    gap: 3rem;
+    z-index: 1;
+
 }
 
 .subTitulo {
@@ -256,6 +272,7 @@ body {
     width: 80%;
     border-radius: 20px;
 }
+
 
 .trabalho img {
     width: 100%;
@@ -291,6 +308,7 @@ body {
         gap: 1rem;
     }
 }
+
 
 @keyframes digitador {
     from {
