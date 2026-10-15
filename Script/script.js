@@ -89,6 +89,6 @@ gsap.from(digitacaoMatheus.chars, {
         trigger: ".sessao-Matheus",
         start: "-50% top",
         end: "95% bottom",
-        scrub: true,
+        scrub: 2,
     }
 })

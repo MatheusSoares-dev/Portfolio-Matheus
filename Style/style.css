@@ -170,6 +170,7 @@ body {
 
 .frase-Matheus p::after {
     content: "|";
+    position: absolute;
     animation: digitador .5s infinite alternate;
 
 }
@@ -183,15 +184,8 @@ body {
 
 
 .matheus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 20rem;
     padding: 2rem 0;
-
     img {
-        display: block;
         width: 18rem;
         border-radius: 12px;
     }
@@ -199,10 +193,11 @@ body {
 
 .sobre {
     max-width: 40%;
-    line-height: 1.5rem;
-    text-align: right;
+    letter-spacing: 1px;
+    line-height: 2rem;
+    text-align: left;
     align-items: center;
-    position: relative;
+    font-size: 1.1rem;
 }
 
 
