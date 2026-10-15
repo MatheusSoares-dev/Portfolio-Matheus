@@ -12,7 +12,7 @@
 :root {
     --fontPrimary: "Syne", sans-serif;
     --fontSecundary: "Brittany";
-    --fontText: "Quicksand", sans-serif;
+    --fontText: "Roboto Slab", serif;
     --Verde: #3A6604;
     --TerraCota: #670409;
     --Branco: #F7F8F4;
@@ -26,7 +26,7 @@ body {
     font-family: var(--fontText);
 }
 
-    
+
 .sessao-inicial {
     height: 100svh;
     width: 100%;
@@ -36,10 +36,12 @@ body {
     overflow: hidden;
 }
 
-.hero-esquerda, .hero-direita {
+.hero-esquerda,
+.hero-direita {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     height: 100%;
     width: 50%;
     font-size: clamp(6rem, 8rem, 10rem);
@@ -70,10 +72,10 @@ body {
     left: 0;
 
     p {
-        
+
         text-align: center;
         font-size: 1.2rem;
-        font-weight: 600;
+        font-weight: 500;
         display: inline-block;
         width: 50%;
     }
@@ -81,16 +83,17 @@ body {
 
 .nome {
     line-height: 3.9rem;
+
     h1 {
         font-size: clamp(6rem, 9rem, 10rem);
         font-family: var(--fontPrimary);
         font-weight: 800;
-        text-transform:uppercase ;
+        text-transform: uppercase;
         color: var(--Verde);
     }
 
     h2 {
-        
+
         font-size: clamp(3rem, 6rem, 7rem);
         font-family: var(--fontSecundary);
         color: var(--TerraCota);
@@ -102,11 +105,11 @@ body {
 
 
 .sessao-frases {
-    height: 100svh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5rem 0;
 }
 
 .conteudo-frases {
@@ -115,24 +118,26 @@ body {
     justify-content: center;
     text-align: center;
     flex-direction: column;
+    padding-bottom: 10rem;
 }
 
 .frases {
     font-style: italic;
     line-height: 80%;
+
 }
 
 .frase-esquerda {
     font-family: var(--fontPrimary);
     font-weight: 800;
-    font-size: clamp(5rem, 8rem, 10rem);
+    font-size: clamp(3.5rem, 8rem, 10rem);
     font-style: italic;
-    
+
 }
 
 .frase-direita {
     font-family: var(--fontSecundary);
-    font-size: clamp(5rem, 7rem, 9rem);
+    font-size: clamp(3.5rem, 7rem, 9rem);
     font-weight: 500;
 }
 
@@ -146,19 +151,158 @@ body {
     right: 20%;
 }
 
-
-.sticky {
-    position: sticky;
-    top: 0;
-    left: 0;
+.sessao-Matheus {
+    width: 100%;
+    padding: 0 3rem;
 }
+
+.frase-Matheus p {
+    font-size: 4rem;
+    max-width: 50%;
+    overflow-wrap: nowrap;
+    word-break: keep-all;
+    position: relative;
+
+    span {
+        color: var(--Verde);
+    }
+}
+
+.frase-Matheus p::after {
+    content: "|";
+    animation: digitador .5s infinite alternate;
+
+}
+
+
+.apresentacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.matheus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20rem;
+    padding: 2rem 0;
+
+    img {
+        display: block;
+        width: 18rem;
+        border-radius: 12px;
+    }
+}
+
+.sobre {
+    max-width: 40%;
+    line-height: 1.5rem;
+    text-align: right;
+    align-items: center;
+    position: relative;
+}
+
+
+
 
 .trabalhos {
     width: 100%;
     height: 100svh;
-    display:flex ;
-    justify-content:center ;
+    display: flex;
+    justify-content: center;
     align-items: center;
     background-color: var(--Preto);
     color: var(--Branco);
+}
+
+.sessao-trabalhos {
+    display: flex;
+    background: var(--Preto);
+    color: var(--Branco);
+    width: 100%;
+    padding: 2rem;
+}
+
+.titulo-trabalhos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    gap: 2rem;
+
+    h3 {
+        font-family: var(--fontPrimary);
+        font-weight: 800;
+        color: var(--Verde);
+        text-transform: uppercase;
+        font-size: clamp(4rem, 6rem, 7rem);
+    }
+}
+
+.subTitulo {
+    max-width: 65%;
+    padding: 0 0 1rem 0;
+    color: gray;
+    line-height: 2rem;
+    letter-spacing: 1px;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 3rem 0 2rem 0;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.trabalho img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.nome-trabalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: .5rem 1rem;
+    color: var(--Branco);
+
+    h4 {
+        font-family: var(--fontPrimary);
+        font-weight: 800;
+        font-size: 2rem;
+        font-style: italic;
+        text-transform: uppercase;
+    }
+
+    a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #E78332;
+        font-weight: 500;
+        font-family: var(--fontSecundary);
+        font-size: 1.5rem;
+        gap: 1rem;
+    }
+}
+
+@keyframes digitador {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

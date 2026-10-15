@@ -52,7 +52,7 @@ const tlFrase = gsap.timeline({
     scrollTrigger: {
         trigger: ".sessao-frases",
         start: "-70% top",
-        end: "bottom bottom",
+        end: "120% bottom",
         scrub: 3,
     }
 })
@@ -77,3 +77,18 @@ tlFrase.fromTo(".frase-direita", {
 
 }, "<")
 
+
+const digitacaoMatheus = new SplitText(".frase-Matheus p", {type: "chars"})
+
+gsap.from(digitacaoMatheus.chars, {
+    display: "none",
+    duration: 1,
+    x: 10,
+    stagger: .8,
+    scrollTrigger: {
+        trigger: ".sessao-Matheus",
+        start: "-50% top",
+        end: "95% bottom",
+        scrub: true,
+    }
+})
