@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText)
 const tlHero = gsap.timeline({
     scrollTrigger: {
         trigger: ".hero",
-        strat: "top top",
+        start: "top top",
         end: "+=150%",
         pin: true,
         scrub: 2
@@ -93,36 +93,22 @@ gsap.from(digitacaoMatheus.chars, {
     }
 })
 
+const cards = document.querySelectorAll('.conteudo');
 
-const tlTransicao = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".sessao-trabalhos",
-        start: "top top",
-        end: "+=170%",
-        scrub: 2,
-        pin: true,
-        anticipatePin: 1
-    }
-})
+  cards.forEach((card, i) => {
+    if (i === cards.length - 1) return;
 
-tlTransicao.to(".colunas", {
-    scaleX: 0,
-    duration: 1,
-    ease: "power2.inOut",
-    stagger: {
-        each: .2,
-        from: "start"
-    }
-})
+    const proximoCard = cards[i + 1];
 
-tlTransicao.from(".cabecalho-trabalhos h3", {
-    x: 100, 
-    opacity: 0,
-    duration: 1
-})
-
-tlTransicao.from(".subTitulo p", {
-    x: -100,
-    opacity: 0,
-    duration: 1
-}, "<")
+    gsap.to(card, {
+      scale: 0.7,      
+      y: -40,
+      ease: "none",
+      scrollTrigger: {
+        trigger: proximoCard,   
+        start: "top bottom",     
+        end: "top 30px",         
+        scrub: true              
+      }
+    });
+  });
