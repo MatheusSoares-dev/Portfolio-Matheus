@@ -316,6 +316,76 @@ body {
     scale: 1.1
 }
 
+.cta {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cabecalho-cta {
+    padding: 4rem;
+    width: 55%;
+}
+
+.cabecalho-cta p{
+    font-size: 6rem ;
+    width: 100%;
+    line-height: 7rem;
+}
+
+.cabecalho-cta p span:nth-child(1) {
+    font-family: var(--fontSecundary);
+    font-size: 7rem;
+}
+
+.cabecalho-cta p span:nth-child(2) {
+    color: var(--Verde);
+}
+
+.frase-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.frase {
+    padding:0 2rem ;
+    font-size: 2.5rem;
+
+    span {
+        color: var(--TerraCota);
+    }
+}
+
+.mao {
+    width: max-content;
+}
+
+.mao img{
+    display: block;
+    position: relative;
+    width: 40rem;
+    rotate: 30deg;
+    right: 12%;
+    filter: grayscale(100%);
+}
+
+.computador {
+    width: max-content;
+}
+
+.computador img {
+    width: 40rem;
+    rotate: 10deg;
+}
+
+
+
+
+
 @keyframes digitador {
     from {
         opacity: 0;
