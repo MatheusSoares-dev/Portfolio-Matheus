@@ -330,6 +330,7 @@ body {
 
 .cabecalho-cta p{
     font-size: 6rem ;
+    font-family: var(--fontPrimary);
     width: 100%;
     line-height: 7rem;
 }
@@ -341,6 +342,7 @@ body {
 
 .cabecalho-cta p span:nth-child(2) {
     color: var(--Verde);
+    font-family: var(--fontText);
 }
 
 .frase-cta {
@@ -353,8 +355,8 @@ body {
 
 .frase {
     padding:0 2rem ;
-    font-size: 2.5rem;
-
+    font-size: 2.8rem;
+    
     span {
         color: var(--TerraCota);
     }
@@ -379,11 +381,18 @@ body {
 
 .computador img {
     width: 40rem;
-    rotate: 10deg;
+    rotate: 18deg;
 }
 
 
-
+.frase-computador {
+    padding-left: 3rem ;
+    font-size: 1.4rem;
+    width: 40%;
+    line-height: 170%;
+    text-align: center;
+    border-right: 2px solid var(--TerraCota);
+}
 
 
 @keyframes digitador {
