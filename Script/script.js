@@ -89,7 +89,7 @@ tlMatheus.from(digitacaoMatheus.chars, {
     stagger: 2,
     ease: "powe2.InOut",
     scrollTrigger: {
-        trigger: ".sessao-Matheus",
+        trigger: ".apresentacao",
         start: "-60% top",
         end: "105% bottom",
         scrub: 1,
@@ -187,7 +187,7 @@ tlCta.from(".computador img", {
     y: 100,
     duration: 1,
     scrollTrigger: {
-        trigger: ".frase",
+        trigger: ".computador-cta",
         start: "top top",
         end: "bottom bottom",
         scrub: 2
@@ -204,7 +204,7 @@ tlCta.from(palavrasCta.words,{
     duration: 3,
     stagger: .5,
     scrollTrigger: {
-        trigger: ".frase",
+        trigger: ".computador-cta",
         start: "top top",
         end: "bottom bottom",
         scrub: 2
