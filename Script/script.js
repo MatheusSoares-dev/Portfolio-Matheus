@@ -188,9 +188,9 @@ tlCta.from(".computador img", {
     duration: 1,
     scrollTrigger: {
         trigger: ".computador-cta",
-        start: "top top",
+        start: "-60% top",
         end: "bottom bottom",
-        scrub: 2
+        scrub: 2,
     }
 })  
 
@@ -205,7 +205,7 @@ tlCta.from(palavrasCta.words,{
     stagger: .5,
     scrollTrigger: {
         trigger: ".computador-cta",
-        start: "top top",
+        start: "-50% top",
         end: "bottom bottom",
         scrub: 2
     }
