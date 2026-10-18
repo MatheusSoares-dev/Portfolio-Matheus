@@ -5,21 +5,21 @@ const tlHero = gsap.timeline({
     scrollTrigger: {
         trigger: ".hero",
         start: "top top",
-        end: "+=150%",
+        end: "+=170%",
         pin: true,
-        scrub: 2
+        scrub: 2,
     }
 })
 
 tlHero.to(".hero-esquerda", {
     x: "-100%",
-    ease: "ease.inOut",
+    ease: "power1.inOut",
     duration: 1.5
 })
 
 tlHero.to(".hero-direita", {
     x: "100%",
-    ease: "ease.inOut",
+    ease: "power1.inOut",
     duration: 1.5
 }, "<")
 
@@ -80,18 +80,34 @@ tlFrase.fromTo(".frase-direita", {
 
 const digitacaoMatheus = new SplitText(".frase-Matheus p", { type: "chars" })
 
-gsap.from(digitacaoMatheus.chars, {
+const tlMatheus = gsap.timeline ()
+
+tlMatheus.from(digitacaoMatheus.chars, {
     display: "none",
     duration: 1,
     x: 10,
-    stagger: .8,
+    stagger: 2,
+    ease: "powe2.InOut",
     scrollTrigger: {
         trigger: ".sessao-Matheus",
-        start: "-50% top",
-        end: "95% bottom",
+        start: "-60% top",
+        end: "105% bottom",
         scrub: 1,
     }
 })
+
+tlMatheus.to(".matheus img", {
+    filter: "grayscale(0%)",
+    scale: 1.2,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".sessao-Matheus",
+        start: "center center",
+        end: "105% bottom",
+        scrub: 1,
+    }
+
+}, "<")
 
 const cards = document.querySelectorAll('.conteudo');
 
@@ -112,3 +128,85 @@ const cards = document.querySelectorAll('.conteudo');
       }
     });
   });
+
+
+const tlCta = gsap.timeline()
+
+let palavrasCta = new SplitText(".cabecalho-cta p", {type: "words"} )
+
+tlCta.to(palavrasCta.words, {
+    autoAlpha: 0,
+    y: 100,
+    duration: 1,
+    stagger: {
+        from: "random",
+        each: .3
+    },
+    scrollTrigger: {
+        trigger: ".cta",
+        start: "-15% top",
+        end: "center center",
+        scrub: 2,
+    }
+})
+
+tlCta.from(".mao img", {
+    x: -500,
+    duration: 1,
+    ease: "ease",
+    scrollTrigger: {
+        trigger: ".cta",
+        start: "top top",
+        end: "top center",
+        scrub: 1
+    }
+})
+
+palavrasCta = new SplitText(".frase p", {type: "words"} )
+
+tlCta.from(palavrasCta.words,{
+    autoAlpha: 0,
+    x: 200,
+    y: 50,
+    duration: 1,
+    ease: "back.out",
+    stagger: .5,
+    scrollTrigger: {
+        trigger: ".cta",
+        start: "top top",
+        end: "center center",
+        scrub: 1
+    }
+}, "<+5")
+
+
+tlCta.from(".computador img", {
+    scale: 0,
+    rotation: 30,
+    autoAlpha: 0,
+    y: 100,
+    duration: 1,
+    scrollTrigger: {
+        trigger: ".frase",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 2
+    }
+})  
+
+
+palavrasCta = new SplitText(".frase-computador", {type: "words"} )
+
+tlCta.from(palavrasCta.words,{
+    y: 200,
+    autoAlpha: 0,
+    ease: "back.out",
+    duration: 3,
+    stagger: .5,
+    scrollTrigger: {
+        trigger: ".frase",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 2
+    }
+}, "+=2")
