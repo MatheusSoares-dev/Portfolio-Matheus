@@ -80,7 +80,7 @@ tlFrase.fromTo(".frase-direita", {
 
 const digitacaoMatheus = new SplitText(".frase-Matheus p", { type: "chars" })
 
-const tlMatheus = gsap.timeline ()
+const tlMatheus = gsap.timeline()
 
 tlMatheus.from(digitacaoMatheus.chars, {
     display: "none",
@@ -111,28 +111,38 @@ tlMatheus.to(".matheus img", {
 
 const cards = document.querySelectorAll('.conteudo');
 
-  cards.forEach((card, i) => {
+cards.forEach((card, i) => {
     if (i === cards.length - 1) return;
 
     const proximoCard = cards[i + 1];
 
-    gsap.to(card, {
-      scale: 0.7,      
-      y: -40,
-      ease: "none",
-      scrollTrigger: {
-        trigger: proximoCard,   
-        start: "top bottom",     
-        end: "top 30px",         
-        scrub: true              
-      }
+    const tlCards = gsap.timeline({
+        scrollTrigger: {
+            trigger: proximoCard,
+            start: "top bottom",
+            end: "top 30px",
+            scrub: true
+        }
+    })
+
+    tlCards.to(card, {
+        scale: 0.7,
+        y: -40,
+        ease: "none"
     });
-  });
+
+    tlCards.to(card, {
+        rotate: 10,
+        ease: "ease"
+    }, "-=.4")
+});
+
+
 
 
 const tlCta = gsap.timeline()
 
-let palavrasCta = new SplitText(".cabecalho-cta p", {type: "words"} )
+let palavrasCta = new SplitText(".cabecalho-cta p", { type: "words" })
 
 tlCta.to(palavrasCta.words, {
     autoAlpha: 0,
@@ -144,7 +154,7 @@ tlCta.to(palavrasCta.words, {
     },
     scrollTrigger: {
         trigger: ".cta",
-        start: "-15% top",
+        start: "-20% top",
         end: "center center",
         scrub: 2,
     }
@@ -162,9 +172,9 @@ tlCta.from(".mao img", {
     }
 })
 
-palavrasCta = new SplitText(".frase p", {type: "words"} )
+palavrasCta = new SplitText(".frase p", { type: "words" })
 
-tlCta.from(palavrasCta.words,{
+tlCta.from(palavrasCta.words, {
     autoAlpha: 0,
     x: 200,
     y: 50,
@@ -192,12 +202,12 @@ tlCta.from(".computador img", {
         end: "bottom bottom",
         scrub: 2,
     }
-})  
+})
 
 
-palavrasCta = new SplitText(".frase-computador", {type: "words"} )
+palavrasCta = new SplitText(".frase-computador", { type: "words" })
 
-tlCta.from(palavrasCta.words,{
+tlCta.from(palavrasCta.words, {
     y: 200,
     autoAlpha: 0,
     ease: "back.out",
