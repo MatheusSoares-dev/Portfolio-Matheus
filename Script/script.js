@@ -227,7 +227,7 @@ window.addEventListener("load", () => {
         scrollTrigger: {
             trigger: ".sessao-jornal",
             start: "top top",
-            end: "+=150%",
+            end: "+=100%",
             scrub: 2,
             pin: true,
             anticipatePin: 1
