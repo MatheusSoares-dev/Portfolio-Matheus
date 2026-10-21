@@ -155,7 +155,7 @@ tlCta.to(palavrasCta.words, {
     scrollTrigger: {
         trigger: ".cta",
         start: "-20% top",
-        end: "center center",
+        end: "15% top",
         scrub: 2,
     }
 })
@@ -220,3 +220,26 @@ tlCta.from(palavrasCta.words, {
         scrub: 2
     }
 }, "+=2")
+
+window.addEventListener("load", () => {
+
+    const tlJornal = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".sessao-jornal",
+            start: "top top",
+            end: "+=120%",
+            scrub: 2,
+            pin: true,
+            anticipatePin: 1
+        }
+    })
+
+    tlJornal.to(".coluna", {
+        scaleX: 0,
+        duration: .8,
+        stagger: {
+            each: .2,
+            from: "start"
+        }
+    })
+})

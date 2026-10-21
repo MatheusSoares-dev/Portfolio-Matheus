@@ -17,6 +17,7 @@
     --TerraCota: #670409;
     --Branco: #F7F8F4;
     --Preto: #10110f;
+    --PretoTrans: #10110f83;
 }
 
 
@@ -323,11 +324,11 @@ body {
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    color: var(--Branco);
-    background: url("/mockup/CTA/wallpaper-projetos.webp");
+   
     z-index: 1;
-    margin-top: 0 !important;
 }
+
+
 
 .cabecalho-cta {
     padding: 2rem 0 1rem 4rem;
@@ -352,7 +353,7 @@ body {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 5rem 0;
+    padding: 3rem 0;
    
 }
 
@@ -397,6 +398,51 @@ body {
     width: 40%;
     line-height: 170%;
     text-align: center;
+}
+
+
+.sessao-jornal{
+    width: 100%;
+    height: 100svh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Preto);
+}
+
+.img-jornal{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+}
+
+.img-jornal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transicao {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.coluna {
+    flex: 1;
+    height: 100%;
+    background: var(--Branco);
+    transform-origin: left center;
 }
 
 
