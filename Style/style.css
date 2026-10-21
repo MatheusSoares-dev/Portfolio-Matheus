@@ -166,7 +166,6 @@ body {
     word-break: keep-all;
     position: relative;
     overflow: hidden;
-    
     span {
         color: var(--Verde);
     }
