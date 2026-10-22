@@ -153,7 +153,7 @@ gsap.to(palavrasCta.words, {
     duration: 1,
     stagger: {
         from: "random",
-        each: 0.12
+        each: 0.3
     },
     ease: "power1.in",
     scrollTrigger: {
@@ -247,6 +247,8 @@ gsap.to(".img-jornal", {
         anticipatePin: 1,
     }
 });
+
+
 
 
 window.addEventListener("load", () => {
