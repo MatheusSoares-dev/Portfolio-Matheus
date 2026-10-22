@@ -438,7 +438,7 @@ body {
     overflow: hidden;
     width: 100%;
     white-space: nowrap;
-    transform: rotate(-2.8deg);
+    z-index: 1;
 }
 
 .carrosel {
@@ -467,6 +467,44 @@ body {
     object-fit: cover;
     width: 3rem;
 }
+
+.segundo-rodape {
+    display: flex;
+    flex-direction: column;
+    color: var(--Branco);
+    background: var(--Preto);
+    width: 100%;
+    padding: 2rem;
+    z-index: 3;
+}
+
+
+.top a{
+    display: flex;
+    color: var(--Branco);
+    text-decoration: none;
+    gap: 2px;
+}
+
+.divulgacao {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nome-divulgacao {
+    flex-direction: column;
+}
+
+.linha {
+    background: gray;
+    height: 2px;
+    width: 60%;
+}
+
+
+
 
 @keyframes carrosel {
     from {
