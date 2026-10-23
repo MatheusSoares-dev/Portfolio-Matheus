@@ -129,6 +129,7 @@ cards.forEach((card, i) => {
         scale: 0.88,
         y: -32,
         rotate: 4,
+        autoAlpha: 0.2,
         transformOrigin: "center top",
         ease: "none",
         scrollTrigger: {
@@ -225,7 +226,7 @@ gsap.from(palavrasComputador.words, {
     stagger: 0.06,
     scrollTrigger: {
         trigger: ".computador-cta",
-        start: "top 72%",
+        start: "top 92%",
         end: "bottom 42%",
         scrub: 1,
     }
@@ -235,7 +236,7 @@ gsap.from(palavrasComputador.words, {
 /* Jornal */
 gsap.to(".img-jornal", {
     clipPath: "circle(100% at 50% 50%)",
-    scale: 1.06,
+    scale: 1.08,
     duration: 1,
     ease: "none",
     scrollTrigger: {

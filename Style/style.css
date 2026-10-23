@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 @font-face {
@@ -444,11 +445,11 @@ body {
 .carrosel {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding-right: 2rem;
+    gap: 6.8rem;
+    padding-right: 3rem;
     flex: 0 0 auto;
     animation: carrosel 20s infinite linear;
-    
+
 }
 
 .conteiner-carrosel:hover .carrosel {
@@ -457,7 +458,7 @@ body {
 
 .conteudo-carrosel {
     flex: 0 0 10rem;
-    padding: 1rem;
+    padding: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -475,11 +476,14 @@ body {
     background: var(--Preto);
     width: 100%;
     padding: 2rem;
-    z-index: 3;
+    gap: 1rem;
 }
 
+.top {
+    width: max-content;
+}
 
-.top a{
+.top a {
     display: flex;
     color: var(--Branco);
     text-decoration: none;
@@ -495,21 +499,45 @@ body {
 
 .nome-divulgacao {
     flex-direction: column;
+    h4 {
+        text-transform: uppercase;
+    }
+
+    span {
+        color: gray;
+    }
 }
 
 .linha {
     background: gray;
     height: 2px;
-    width: 60%;
+    width: 50%;
 }
 
+.redes {
+    display: flex;
+    gap: 1rem;
+}
 
+.redes-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
 
+.links a {
+    color: var(--Branco);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: var(--fontPrimary);
+    font-size: .9vw;
+}
 
 @keyframes carrosel {
     from {
         transform: translateX(0);
     }
+
 
     to {
         transform: translateX(-100%);
