@@ -5,6 +5,10 @@
     scroll-behavior: smooth;
 }
 
+html {
+    overflow-x: clip;
+}
+
 @font-face {
     font-family: "Brittany";
     src: url("/mockup/font/BrittanySignature.ttf");
@@ -27,6 +31,20 @@ body {
     background: var(--Branco);
     font-family: var(--fontText);
     overflow-x: hidden;
+    overflow-x: clip;
+}
+
+/* Mantém a camada absoluta do hero ancorada à própria seção pinada. */
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero .sessao-nome {
+    right: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 
@@ -162,8 +180,8 @@ body {
 }
 
 .frase-Matheus p {
-    font-size: 5.8rem;
-    max-width: 50%;
+    font-size: 4.5rem;
+    max-width: 40%;
     overflow-wrap: nowrap;
     word-break: keep-all;
     position: relative;
@@ -194,11 +212,11 @@ body {
 
 .sobre {
     max-width: 40%;
-    letter-spacing: 1px;
-    line-height: 2rem;
-    text-align: left;
+    letter-spacing: 2.2px;
+    line-height: 2.2rem;
+    text-align: center;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
 }
 
 
@@ -236,7 +254,6 @@ body {
 .subTitulo {
     max-width: 65%;
     padding: 0 0 1rem 0;
-
     line-height: 2rem;
     letter-spacing: 1px;
 }
@@ -499,6 +516,7 @@ body {
 
 .nome-divulgacao {
     flex-direction: column;
+
     h4 {
         text-transform: uppercase;
     }
@@ -530,12 +548,30 @@ body {
     text-decoration: none;
     text-transform: capitalize;
     font-family: var(--fontPrimary);
-    font-size: 1.2vw;
-    transition: .5s ease-in-out;
+    font-size: 1vw;
+    transition: .3s ease-in-out;
 }
 
-.links:nth-child(1):hover a  {
-    color: #171515;
+
+.links:nth-child(1):hover a {
+    color: #415468;
+}
+
+.links:nth-child(2):hover a {
+    color: #0a66c2;
+}
+
+.links:nth-child(3):hover a {
+    background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.links:nth-child(4):hover a {
+    color: rgb(1, 158, 1);
 }
 
 @keyframes carrosel {
@@ -546,5 +582,416 @@ body {
 
     to {
         transform: translateX(-100%);
+    }
+}
+
+/* =========================================================
+   RESPONSIVIDADE
+   Desktop permanece como referência. Os ajustes abaixo
+   adaptam a composição sem alterar a estrutura ou o GSAP.
+   ========================================================= */
+
+/* Tablet vertical — incluindo 820 x 1180 */
+@media (min-width: 601px) and (max-width: 900px) {
+
+
+    .hero-esquerda,
+    .hero-direita {
+        font-size: clamp(5rem, 10vw, 7rem);
+        width: 50%;
+    }
+
+    .sessao-nome {
+        gap: 25%;
+    }
+
+    .sessao-nome p {
+        width: 65%;
+        font-size: 1.1rem;
+    }
+
+    .nome h1 {
+        font-size: clamp(6rem, 11.6vw, 8rem);
+    }
+
+    .nome h2 {
+        font-size: clamp(4rem, 9vw, 6rem);
+    }
+
+    .frases {
+        font-size: clamp(6rem, 11.6vw, 8rem);
+    }
+
+    .frase-Matheus p {
+        max-width: 75%;
+        font-size: clamp(3.3rem, 5vw, 4.5rem);
+    }
+
+    .matheus img {
+        width: 92%;
+    }
+
+    .sobre {
+        max-width: 48%;
+        font-size: 1.25rem;
+        line-height: 2rem;
+        
+    }
+
+    .conteudo {
+        width: 88%;
+    }
+
+    .cabecalho-trabalhos {
+        gap: 3rem;
+    }
+
+
+    .cabecalho-trabalhos h3 {
+        font-size: clamp(3rem, 9vw, 8rem);
+    }
+
+    .nome-trabalho h4 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .nome-trabalho a {
+        font-size: 1.7rem;
+    }
+
+    .cabecalho-cta {
+        padding-left: 2rem;
+    }
+
+    .cabecalho-cta p {
+        font-size: clamp(3.5rem, 8vw, 5rem);
+        line-height: 1.05;
+    }
+
+    .mao img {
+        width: 28rem;
+        right: 8%;
+    }
+
+    .frase {
+        font-size: 2.2rem;
+    }
+
+    .computador img {
+        width: 36rem;
+    }
+
+    .frase-computador {
+        width: 60%;
+        padding-left: 2rem;
+    }
+
+    .links a {
+        font-size: 0.85rem;
+    }
+
+    .titulo-rodade h1 {
+        font-size: clamp(2rem, 14vw, 8rem) ;
+    }
+
+    .linha {
+        display: none;
+    }
+
+    .links a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Telefones grandes / Pro Max e aparelhos até 600px */
+@media (max-width: 600px) {
+
+    .sessao-inicial,
+    .sessao-nome {
+        height: 100svh;
+    }
+
+    .hero-esquerda,
+    .hero-direita {
+        font-size: clamp(3.8rem, 15vw, 5.5rem);
+    }
+
+    .sessao-nome {
+        gap: 24%;
+        padding: 0 1.25rem;
+    }
+
+    .sessao-nome p {
+        width: 88%;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .nome {
+        line-height: 0.75;
+    }
+
+    .nome h1 {
+        font-size: clamp(3rem, 9vw, 6rem);
+    }
+
+    .nome h2 {
+        font-size: clamp(2.5rem, 10vw, 4.8rem);
+        -webkit-text-stroke-width: 2px;
+    }
+
+    .sessao-frases {
+        padding: 4rem 1.25rem;
+    }
+
+    .conteudo-frases {
+        width: 100%;
+        padding-bottom: 4rem;
+    }
+
+    .frase-esquerda,
+    .frase-direita {
+        font-size: clamp(3rem, 11vw, 5rem);
+    }
+
+    .flex-end {
+        left: 10%;
+    }
+
+    .flex-start {
+        right: 10%;
+    }
+
+    .sessao-Matheus {
+        padding: 0 1.25rem;
+    }
+
+    .frase-Matheus p {
+        max-width: 100%;
+        font-size: clamp(2.2rem, 9vw, 4rem);
+        line-height: 1.05;
+    }
+
+    .apresentacao {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .matheus {
+        padding: 1.5rem 0 0;
+        text-align: center;
+    }
+
+    .matheus img {
+        width: min(82vw, 21rem);
+    }
+
+    .sobre {
+        max-width: 100%;
+        font-size: 1.05rem;
+        line-height: 1.8rem;
+        text-align: center;
+    }
+
+    .sessao-trabalhos {
+        padding: 5rem 0;
+    }
+
+
+    .cabecalho-trabalhos h3 {
+        font-size: clamp(2rem, 9vw, 5rem);
+        line-height: 0.9;
+        padding-bottom: 2rem;
+    }
+
+    .subTitulo {
+        max-width: 100%;
+        line-height: 1.7rem;
+    }
+
+    .conteudo {
+        width: 100%;
+        padding: 1rem 0 2rem;
+    }
+
+    .nome-trabalho {
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.8rem 0.15rem;
+    }
+
+    .nome-trabalho h4 {
+        font-size: clamp(1.55rem, 7vw, 2.4rem);
+        text-align: left;
+    }
+
+    .nome-trabalho a {
+        flex-shrink: 0;
+        font-size: 1.25rem;
+        gap: 0.35rem;
+    }
+
+    .nome-trabalho a svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .maisProjetos {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .cabecalho-cta {
+        padding: 1.5rem 1.25rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .cabecalho-cta p {
+        font-size: clamp(3rem, 13vw, 4.8rem);
+        line-height: 1;
+    }
+
+    .frase-cta {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1.25rem;
+    }
+
+    .mao,
+    .computador {
+        width: 100%;
+    }
+
+    .mao img {
+        width: min(84vw, 22rem);
+        margin: 0 auto;
+        right: 25%;
+    }
+
+    .frase {
+        padding: 0;
+        font-size: clamp(1.9rem, 8vw, 2.8rem);
+    }
+
+    .frase span {
+        font-size: inherit;
+    }
+
+    .computador-cta {
+        flex-direction: column-reverse;
+    }
+
+    .computador img {
+        display: block;
+        width: min(100%, 34rem);
+        margin: 0 auto;
+    }
+
+    .frase-computador {
+        width: 100%;
+        padding: 0;
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .sessao-jornal {
+        height: 100svh;
+    }
+
+    .img-jornal {
+        padding: 0.75rem;
+        clip-path: circle(28% at 50% 49%);
+        object-fit: cover;
+    }
+
+    .titulo-rodade {
+        height: 16svh;
+    }
+
+    .titulo-rodade h1 {
+        font-size: clamp(3.2rem, 12vw, 5rem);
+    }
+
+    .carrosel {
+        gap: 2.75rem;
+        padding-right: 1.5rem;
+    }
+
+    .conteudo-carrosel {
+        flex-basis: 7rem;
+        padding: 1.25rem;
+    }
+
+    .segundo-rodape {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .divulgacao {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .linha {
+        width: 100%;
+    }
+
+    .redes {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .redes-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 0.75rem 1rem;
+    }
+
+    .links a {
+        font-size: 0.9rem;
+    }
+}
+
+/* iPhone 14 Pro — 393 x 852 e telas mais estreitas */
+@media (max-width: 400px) {
+
+    .hero-esquerda,
+    .hero-direita {
+        font-size: clamp(3.4rem, 14vw, 4.5rem);
+    }
+
+    .sessao-nome {
+        gap: 22%;
+    }
+
+    .sessao-nome p {
+        font-size: 0.88rem;
+    }
+
+    .nome h1 {
+        font-size: clamp(2.8rem, 9vw, 5rem);
+    }
+
+    .nome h2 {
+        font-size: clamp(2.75rem, 10vw, 4rem);
+    }
+
+    .frase-esquerda,
+    .frase-direita {
+        font-size: clamp(2.3rem, 11vw, 4rem);
+    }
+
+    .nome-trabalho h4 {
+        font-size: 1.4rem;
+    }
+
+    .nome-trabalho a {
+        font-size: 1.05rem;
+    }
+
+    .cabecalho-cta p {
+        font-size: clamp(2.7rem, 12vw, 3.8rem);
     }
 }

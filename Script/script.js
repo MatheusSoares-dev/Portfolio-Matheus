@@ -1,5 +1,9 @@
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
+// Evita que a barra do navegador no mobile cause um recálculo brusco
+// enquanto uma seção está fixada pelo ScrollTrigger.
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 /* Hero */
 const tlHero = gsap.timeline({
     scrollTrigger: {
@@ -7,6 +11,8 @@ const tlHero = gsap.timeline({
         start: "top top",
         end: "+=170%",
         pin: true,
+        pinType: "fixed",
+        invalidateOnRefresh: true,
         scrub: 1.5,
         anticipatePin: 1,
     }
@@ -87,7 +93,7 @@ tlFrase.fromTo(".frase-direita", {
 
 
 /* Apresentação */
-const digitacaoMatheus = new SplitText(".frase-Matheus p", {
+let digitacaoMatheus = new SplitText(".frase-Matheus p", {
     type: "chars",
     charsClass: "split-char"
 });
@@ -95,8 +101,8 @@ const digitacaoMatheus = new SplitText(".frase-Matheus p", {
 const tlMatheus = gsap.timeline({
     scrollTrigger: {
         trigger: ".sessao-Matheus",
-        start: "top 70%",
-        end: "bottom 40%",
+        start: "-10% bottom",
+        end: "center center",
         scrub: 1,
     }
 });
@@ -107,14 +113,45 @@ tlMatheus.from(digitacaoMatheus.chars, {
     duration: 0.5,
     stagger: 0.03,
     ease: "power2.out"
-}, "<");
+});
+
 
 tlMatheus.to(".matheus img", {
     rotate: 10,
-    scale: 1.08,
+    scale: 1.2,
     duration: 1,
     ease: "none"
-}, "-=.5");
+}, "<");
+
+digitacaoMatheus = new SplitText(".sobre p", {
+    type: "chars",
+});
+
+const tlOnda = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".apresentacao",
+        start: "-20% 40%",
+        end: "125% bottom",
+        scrub: 2,
+
+    }
+})
+
+tlOnda.to(digitacaoMatheus.chars, {
+    y: 20,
+    ease: "sine.inOut",
+    stagger: .1,
+    duration: .5,
+}, "<")
+
+    .to(digitacaoMatheus.chars, {
+        y: -20,
+        ease: "sine.inOut",
+        stagger: .1,
+        duration: .5,
+    }, "<.2")
+
+
 
 
 /* Cards dos trabalhos */
@@ -244,6 +281,8 @@ gsap.to(".img-jornal", {
         start: "top top",
         end: "+=100%",
         pin: true,
+        pinType: "fixed",
+        invalidateOnRefresh: true,
         scrub: 1.5,
         anticipatePin: 1,
     }
@@ -255,3 +294,12 @@ gsap.to(".img-jornal", {
 window.addEventListener("load", () => {
     ScrollTrigger.refresh();
 });
+
+
+function whats(event) {
+    event.preventDefault();
+    const telefone = 31987097928
+    const msn = "Oi Matheus, tudo bom? Vim pelo seu Portfolio, quero saber mais sobre os projetos?"
+    const url = `https://wa.me/${telefone}?text=${encodeURIComponent(msn)}`
+    window.open(url, '_blank')
+}
