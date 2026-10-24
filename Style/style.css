@@ -162,7 +162,7 @@ body {
 }
 
 .frase-Matheus p {
-    font-size: 4rem;
+    font-size: 5.8rem;
     max-width: 50%;
     overflow-wrap: nowrap;
     word-break: keep-all;
@@ -186,9 +186,9 @@ body {
     padding: 2rem 0;
 
     img {
-        width: 18rem;
+        width: 70%;
+        object-fit: cover;
         border-radius: 12px;
-        filter: grayscale(100%);
     }
 }
 
@@ -530,7 +530,12 @@ body {
     text-decoration: none;
     text-transform: capitalize;
     font-family: var(--fontPrimary);
-    font-size: .9vw;
+    font-size: 1.2vw;
+    transition: .5s ease-in-out;
+}
+
+.links:nth-child(1):hover a  {
+    color: #171515;
 }
 
 @keyframes carrosel {

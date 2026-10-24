@@ -110,11 +110,11 @@ tlMatheus.from(digitacaoMatheus.chars, {
 }, "<");
 
 tlMatheus.to(".matheus img", {
-    filter: "grayscale(0%)",
+    rotate: 10,
     scale: 1.08,
     duration: 1,
     ease: "none"
-}, "-=.1");
+}, "-=.5");
 
 
 /* Cards dos trabalhos */
