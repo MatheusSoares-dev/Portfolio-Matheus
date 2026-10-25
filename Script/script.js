@@ -4,6 +4,59 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 // enquanto uma seção está fixada pelo ScrollTrigger.
 ScrollTrigger.config({ ignoreMobileResize: true });
 
+const tlPreloader = gsap.timeline()
+
+const letraPreloader = SplitText.create(".conteudo h1", {
+    type: "chars",
+    charsClass: "letraPreloader"
+}
+)
+
+const loaderContador = letraPreloader.chars.length
+
+tlPreloader.to(letraPreloader.chars, {
+    autoAlpha: 1,
+    duration: .5,
+    stagger: {
+        amount: 2.6,
+        each: 1,
+
+        onStart: function () {
+            const indiceAtual = letraPreloader.chars.indexOf(this.targets()[0])
+
+
+            if (indiceAtual !== loaderContador - 1) {
+                gsap.to(this.targets(), {
+                    autoAlpha: 0,
+                    delay: .2,
+                    duration: .3
+                })
+            }
+        }
+    }
+})
+
+tlPreloader.to(letraPreloader.chars, {
+    autoAlpha: 1,
+    duration: .2,
+    stagger: .08
+})
+
+tlPreloader.to(letraPreloader.chars, {
+    autoAlpha: 0,
+    duration: .2,
+})
+
+tlPreloader.to(".coluns", {
+    scaleX: 0,
+    stagger: {
+        amount: 1,
+        from: "start"
+    },
+    duration: .5
+})
+
+
 /* Hero */
 const tlHero = gsap.timeline({
     scrollTrigger: {

@@ -34,7 +34,60 @@ body {
     overflow-x: clip;
 }
 
-/* Mantém a camada absoluta do hero ancorada à própria seção pinada. */
+
+
+.preloader {
+    width: 100%;
+    height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    position: fixed;
+    pointer-events: none;
+}
+
+.caixa {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 88 ;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+    z-index: 99;
+}
+
+.coluns {
+    flex: 1;
+    height: 110%;
+    width: 100%;
+    background-color: var(--Preto);
+    transform-origin: left center;
+}
+
+.conteudo h1 {
+    font-family: var(--fontPrimary);
+    font-weight: 800;
+    font-size: 5rem;
+    color: var(--Verde);
+}
+
+.letraPreloader {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    
+}
+
 .hero {
     position: relative;
     width: 100%;
