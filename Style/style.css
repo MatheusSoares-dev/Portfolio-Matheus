@@ -54,7 +54,7 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 88 ;
+    z-index: 88;
 }
 
 .conteudo {
@@ -77,7 +77,7 @@ body {
 .conteudo h1 {
     font-family: var(--fontPrimary);
     font-weight: 800;
-    font-size: 5rem;
+    font-size: clamp(2rem, 5rem, 8rem);
     color: var(--Verde);
 }
 
@@ -85,7 +85,7 @@ body {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    
+
 }
 
 .hero {
@@ -647,6 +647,10 @@ body {
 /* Tablet vertical — incluindo 820 x 1180 */
 @media (min-width: 601px) and (max-width: 900px) {
 
+    .conteudo h1 {
+        font-size: clamp(2rem, 3rem, 8rem);
+
+    }
 
     .hero-esquerda,
     .hero-direita {
@@ -688,7 +692,7 @@ body {
         max-width: 48%;
         font-size: 1.25rem;
         line-height: 2rem;
-        
+
     }
 
     .conteudo {
@@ -744,7 +748,7 @@ body {
     }
 
     .titulo-rodade h1 {
-        font-size: clamp(2rem, 14vw, 8rem) ;
+        font-size: clamp(2rem, 14vw, 8rem);
     }
 
     .linha {
@@ -758,6 +762,11 @@ body {
 
 /* Telefones grandes / Pro Max e aparelhos até 600px */
 @media (max-width: 600px) {
+
+    .conteudo h1 {
+        font-size: clamp(2rem, 3rem, 8rem);
+
+    }
 
     .sessao-inicial,
     .sessao-nome {

@@ -1,7 +1,5 @@
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-// Evita que a barra do navegador no mobile cause um recálculo brusco
-// enquanto uma seção está fixada pelo ScrollTrigger.
 ScrollTrigger.config({ ignoreMobileResize: true });
 
 const tlPreloader = gsap.timeline()
