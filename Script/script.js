@@ -1,8 +1,12 @@
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, SplitText)
 
 ScrollTrigger.config({ ignoreMobileResize: true });
 
 const tlPreloader = gsap.timeline()
+
+gsap.set(".conteudo h1", {
+    autoAlpha: 1
+})
 
 const letraPreloader = SplitText.create(".conteudo h1", {
     type: "chars",
@@ -338,7 +342,6 @@ gsap.to(".img-jornal", {
         anticipatePin: 1,
     }
 });
-
 
 
 
