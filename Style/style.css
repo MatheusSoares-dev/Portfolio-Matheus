@@ -588,14 +588,12 @@ body {
 }
 
 .links:nth-child(3):hover a {
-  background-image: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
+  background-image: linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -616,10 +614,60 @@ body {
   }
 }
 
+.homePage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titulo {
+  padding: .7rem 0 0 0;
+  border-bottom: 2px solid var(--Preto);
+  
+
+  h1 {
+    font-size: clamp(4vw, 6vw, 17vw);
+    font-weight: 300;
+    
+    & span {
+      font-family: var(--fontSecundary);  
+    }
+  }
+}
+
+.mais-trabaho {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+}
+
+.mais-trabaho h3 {
+  display: block;
+  position: sticky;
+  top: 0;
+  left: 0;
+  rotate: 90deg;
+  white-space: nowrap;
+  align-self:center;
+}
+
+.mais-conteudo {
+
+  img {
+    width: 80%;
+    object-fit: cover;
+  }
+}
+
+
+
 /* =========================================================
    RESPONSIVIDADE
-   Desktop permanece como referência. Os ajustes abaixo
-   adaptam a composição sem alterar a estrutura ou o GSAP.
    ========================================================= */
 
 /* Tablet vertical — incluindo 820 x 1180 */
@@ -989,6 +1037,7 @@ body {
 
 /* iPhone 14 Pro — 393 x 852 e telas mais estreitas */
 @media (max-width: 400px) {
+
   .hero-esquerda,
   .hero-direita {
     font-size: clamp(3.4rem, 14vw, 4.5rem);
