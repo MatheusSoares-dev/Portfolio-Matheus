@@ -179,10 +179,10 @@ tlMatheus.to(".matheus img", {
 }, "<");
 
 digitacaoMatheus = new SplitText(".sobre p", {
-    type: "chars",
+    type: "words",
 });
 
-const tlOnda = gsap.timeline({
+const tlFade = gsap.timeline({
     scrollTrigger: {
         trigger: ".apresentacao",
         start: "-20% 40%",
@@ -192,15 +192,17 @@ const tlOnda = gsap.timeline({
     }
 })
 
-tlOnda.to(digitacaoMatheus.chars, {
-    y: 20,
+tlFade.to(digitacaoMatheus.words, {
+    x: 20,
+    autoAlpha: .1,
     ease: "sine.inOut",
     stagger: .1,
     duration: .5,
 }, "<")
 
-    .to(digitacaoMatheus.chars, {
-        y: -20,
+    .to(digitacaoMatheus.words, {
+        x: 0,
+        autoAlpha: 1,
         ease: "sine.inOut",
         stagger: .1,
         duration: .5,
